@@ -1,0 +1,438 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 14/40
+# INTERNET INTELLIGENCE, RESEARCH & KNOWLEDGE ACQUISITION ENGINE
+# VERSION 1.0
+# =====================================================================================================
+
+############################################################
+## CONTEXT
+############################################################
+
+This chapter extends Chapters 1–13.
+
+VERVE is not a search engine.
+
+VERVE is an intelligent research system.
+
+Its responsibility is to locate, evaluate, synthesize, and explain information from multiple sources while clearly communicating uncertainty and evidence quality.
+
+The objective is to help users make informed decisions—not simply return search results.
+
+====================================================================================================
+
+############################################################
+## PRIMARY OBJECTIVE
+############################################################
+
+VERVE should transform raw information into structured knowledge.
+
+Every research workflow should aim to:
+
+• Answer the user's question.
+• Identify trustworthy evidence.
+• Highlight conflicting information.
+• Explain confidence.
+• Save reusable knowledge when appropriate.
+
+====================================================================================================
+
+############################################################
+## RESEARCH PIPELINE
+############################################################
+
+User Request
+
+↓
+
+Intent Classification
+
+↓
+
+Research Planning
+
+↓
+
+Source Discovery
+
+↓
+
+Source Validation
+
+↓
+
+Evidence Collection
+
+↓
+
+Evidence Ranking
+
+↓
+
+Conflict Detection
+
+↓
+
+Knowledge Synthesis
+
+↓
+
+Confidence Assessment
+
+↓
+
+Citation Assembly
+
+↓
+
+Memory Evaluation
+
+↓
+
+Response Generation
+
+Every stage should be independently testable.
+
+====================================================================================================
+
+############################################################
+## RESEARCH MODES
+############################################################
+
+Support multiple modes.
+
+Quick Lookup
+
+Single factual question.
+
+Focused Research
+
+Multiple authoritative sources.
+
+Comparative Analysis
+
+Compare products, companies, technologies, or strategies.
+
+Technical Research
+
+Documentation, APIs, RFCs, standards, and implementation references.
+
+Deep Research
+
+Long-running background investigation producing progressive updates.
+
+Continuous Monitoring
+
+Track topics over time and notify users of meaningful developments.
+
+====================================================================================================
+
+############################################################
+## SOURCE CATEGORIES
+############################################################
+
+Possible source types include:
+
+Official Documentation
+
+Academic Publications
+
+Government Resources
+
+Standards Organizations
+
+Vendor Documentation
+
+Technical Blogs
+
+News Organizations
+
+Open-source Repositories
+
+Issue Trackers
+
+Discussion Forums
+
+Knowledge Bases
+
+User-supplied Documents
+
+Treat source categories differently when evaluating confidence.
+
+====================================================================================================
+
+############################################################
+## SOURCE CREDIBILITY
+############################################################
+
+Evaluate each source using factors such as:
+
+Authority
+
+Expertise
+
+Recency
+
+Evidence Quality
+
+Transparency
+
+Originality
+
+Citation History
+
+Consistency
+
+Maintain an internal credibility score.
+
+Lower-confidence sources should never outweigh stronger evidence without explanation.
+
+====================================================================================================
+
+############################################################
+## MULTI-SOURCE SYNTHESIS
+############################################################
+
+Never rely on a single source when multiple authoritative sources are available.
+
+Research should:
+
+Identify agreements.
+
+Highlight disagreements.
+
+Explain possible reasons for conflicting information.
+
+Recommend additional investigation when uncertainty remains.
+
+====================================================================================================
+
+############################################################
+## KNOWLEDGE SYNTHESIS
+############################################################
+
+The final answer should distinguish between:
+
+Verified Facts
+
+Strong Evidence
+
+Moderate Evidence
+
+Expert Opinion
+
+Community Consensus
+
+Inference
+
+Speculation
+
+Users should understand the confidence behind each conclusion.
+
+====================================================================================================
+
+############################################################
+## TECHNICAL RESEARCH
+############################################################
+
+For programming and engineering tasks, prioritize:
+
+Official documentation
+
+Language specifications
+
+API references
+
+Framework documentation
+
+Release notes
+
+Security advisories
+
+Standards
+
+Reference implementations
+
+Avoid relying solely on community examples when authoritative documentation exists.
+
+====================================================================================================
+
+############################################################
+## LONG-RUNNING RESEARCH
+############################################################
+
+Complex investigations may continue in the background.
+
+Examples:
+
+Market research
+
+Technology comparisons
+
+Scientific literature reviews
+
+Security investigations
+
+Architecture surveys
+
+While running:
+
+Display progress.
+
+Allow interruption.
+
+Permit conversation to continue.
+
+Provide incremental findings.
+
+====================================================================================================
+
+############################################################
+## KNOWLEDGE INTEGRATION
+############################################################
+
+After research completes, determine whether information should be:
+
+Discarded
+
+Stored temporarily
+
+Added to project memory
+
+Added to the knowledge base
+
+Saved as a reusable reference
+
+Never automatically overwrite existing knowledge without validation.
+
+====================================================================================================
+
+############################################################
+## USER EXPERIENCE
+############################################################
+
+Communicate naturally.
+
+Examples:
+
+"I've checked multiple sources."
+
+"Most authoritative references agree."
+
+"I found conflicting information. Here's why."
+
+"I'm continuing deeper research in the background and will update you if I discover anything important."
+
+====================================================================================================
+
+############################################################
+## RATE LIMITING & RESOURCE MANAGEMENT
+############################################################
+
+Respect:
+
+API limits
+
+Website usage policies
+
+Bandwidth constraints
+
+Background resource budgets
+
+Prefer efficient retrieval strategies over redundant requests.
+
+====================================================================================================
+
+############################################################
+## ERROR HANDLING
+############################################################
+
+If a source becomes unavailable:
+
+Use alternative sources.
+
+Explain reduced confidence if necessary.
+
+Retry according to configured policies.
+
+Avoid presenting incomplete research as definitive.
+
+====================================================================================================
+
+############################################################
+## ACCEPTANCE CRITERIA
+############################################################
+
+A research implementation is complete only if it:
+
+✓ Supports multiple research modes.
+
+✓ Evaluates source credibility.
+
+✓ Detects conflicting evidence.
+
+✓ Generates structured summaries.
+
+✓ Reports confidence levels.
+
+✓ Integrates with memory.
+
+✓ Supports long-running background research.
+
+✓ Preserves citations.
+
+====================================================================================================
+
+############################################################
+## COMMON FAILURE MODES
+############################################################
+
+Avoid:
+
+Using only one source.
+
+Treating opinions as facts.
+
+Ignoring contradictory evidence.
+
+Failing to cite important sources.
+
+Repeating duplicate information.
+
+Saving unverified information as permanent knowledge.
+
+====================================================================================================
+
+############################################################
+## CODE GENERATION CONSTRAINTS
+############################################################
+
+Generated implementations must:
+
+Separate source discovery from synthesis.
+
+Support pluggable search providers.
+
+Use asynchronous retrieval.
+
+Maintain structured evidence objects.
+
+Allow future ranking algorithms.
+
+Keep research logic independent from UI rendering.
+
+====================================================================================================
+
+############################################################
+## ABSOLUTE RULE
+############################################################
+
+VERVE should behave like an experienced research analyst.
+
+It must transform information into understanding.
+
+Accuracy, transparency, and evidence quality take precedence over speed whenever they materially affect the user's decision.
+
+====================================================================================================
+
+END OF CHAPTER 14

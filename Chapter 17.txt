@@ -1,0 +1,512 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 17/40
+# DEVELOPER MODE, DIAGNOSTICS & ENGINEERING CONSOLE
+# VERSION 1.0
+# =====================================================================================================
+
+############################################################
+## CONTEXT
+############################################################
+
+This chapter extends Chapters 1–16.
+
+Developer tooling is a first-class capability.
+
+VERVE should expose deep engineering insight while keeping normal users insulated from technical complexity.
+
+Developer Mode must never alter production behavior unless explicitly enabled.
+
+====================================================================================================
+
+############################################################
+## PRIMARY OBJECTIVE
+############################################################
+
+Provide an engineering console that is:
+
+• Observable
+• Searchable
+• Non-intrusive
+• Secure
+• Extensible
+• Low-overhead
+• Production-ready
+
+====================================================================================================
+
+############################################################
+## DEVELOPER MODE
+############################################################
+
+Developer Mode should be disabled by default.
+
+When enabled, additional capabilities become available:
+
+Engineering Dashboard
+
+Live Event Stream
+
+Agent Inspector
+
+Prompt Trace
+
+Memory Inspector
+
+Plugin Manager
+
+Performance Profiler
+
+Automation Inspector
+
+Provider Diagnostics
+
+Experimental Features
+
+Access to Developer Mode should be permission-controlled.
+
+====================================================================================================
+
+############################################################
+## ENGINEERING DASHBOARD
+############################################################
+
+Display real-time information such as:
+
+Application Version
+
+Build Information
+
+Runtime Status
+
+Agent Status
+
+Provider Status
+
+Plugin Status
+
+Memory Engine Status
+
+Speech Engine Status
+
+Automation Status
+
+Background Tasks
+
+System Health
+
+Update Status
+
+Refresh continuously with minimal performance impact.
+
+====================================================================================================
+
+############################################################
+## LIVE EVENT INSPECTOR
+############################################################
+
+Capture structured application events.
+
+Examples:
+
+ConversationStarted
+
+ConversationCompleted
+
+TaskQueued
+
+TaskStarted
+
+TaskFinished
+
+MemoryStored
+
+MemoryRetrieved
+
+PluginLoaded
+
+ProviderSelected
+
+AutomationStarted
+
+AutomationCompleted
+
+PermissionGranted
+
+PermissionDenied
+
+Support filtering, searching, and export.
+
+====================================================================================================
+
+############################################################
+## AGENT INSPECTOR
+############################################################
+
+Display:
+
+Agent Name
+
+Current Task
+
+Queue Length
+
+Execution Time
+
+Resource Usage
+
+Success Rate
+
+Retry Count
+
+Health Status
+
+Assigned Projects
+
+Allow developers to identify overloaded or unhealthy agents quickly.
+
+====================================================================================================
+
+############################################################
+## PROMPT TRACE
+############################################################
+
+For every AI interaction record:
+
+Prompt Template
+
+Retrieved Memory
+
+Context Assembly
+
+Selected Provider
+
+Selected Model
+
+Tool Calls
+
+Response Duration
+
+Token Usage
+
+Estimated Cost
+
+Safety Decisions
+
+Sensitive content should be redacted according to privacy settings.
+
+====================================================================================================
+
+############################################################
+## MEMORY INSPECTOR
+############################################################
+
+Provide visibility into:
+
+Stored Memories
+
+Memory Categories
+
+Embeddings
+
+Retrieval Results
+
+Confidence Scores
+
+Memory Links
+
+Expiration Policies
+
+Duplicate Detection
+
+Manual Editing (optional)
+
+Every memory modification should be auditable.
+
+====================================================================================================
+
+############################################################
+## PROVIDER DIAGNOSTICS
+############################################################
+
+Display:
+
+Configured Providers
+
+Authentication Status
+
+Latency
+
+Availability
+
+Error Rate
+
+Rate Limits
+
+Streaming Support
+
+Current Model
+
+Fallback Status
+
+Quota Usage
+
+Enable connectivity tests without restarting the application.
+
+====================================================================================================
+
+############################################################
+## PLUGIN DEBUGGING
+############################################################
+
+Expose:
+
+Installed Plugins
+
+Versions
+
+Permissions
+
+Lifecycle State
+
+Resource Usage
+
+Recent Errors
+
+Event Subscriptions
+
+Capability Registration
+
+Support safe plugin restart and hot reload where possible.
+
+====================================================================================================
+
+############################################################
+## AUTOMATION INSPECTOR
+############################################################
+
+Visualize automation execution.
+
+Display:
+
+Workflow Graph
+
+Current Step
+
+Completed Steps
+
+Pending Steps
+
+Failures
+
+Retries
+
+Estimated Completion
+
+Dependencies
+
+Allow developers to pause, resume, or replay workflows for debugging.
+
+====================================================================================================
+
+############################################################
+## PERFORMANCE PROFILER
+############################################################
+
+Collect metrics for:
+
+Startup Time
+
+Conversation Latency
+
+Memory Retrieval
+
+Rendering
+
+Provider Calls
+
+Plugin Execution
+
+Automation
+
+CPU
+
+GPU
+
+RAM
+
+Disk I/O
+
+Network Activity
+
+Historical performance trends should be available.
+
+====================================================================================================
+
+############################################################
+## STRUCTURED LOGGING
+############################################################
+
+Logs should include:
+
+Timestamp
+
+Component
+
+Severity
+
+Correlation ID
+
+User Session
+
+Agent ID
+
+Task ID
+
+Provider
+
+Execution Duration
+
+Exception Details
+
+Logs should support:
+
+Filtering
+
+Searching
+
+Export
+
+Rotation
+
+Retention Policies
+
+====================================================================================================
+
+############################################################
+## CONVERSATION REPLAY
+############################################################
+
+Provide an optional replay mode.
+
+Replay should include:
+
+User Input
+
+Retrieved Memories
+
+Planning Decisions
+
+Agent Assignments
+
+Provider Selection
+
+Generated Responses
+
+Tool Usage
+
+Execution Timeline
+
+Useful for debugging complex interactions.
+
+====================================================================================================
+
+############################################################
+## DIAGNOSTIC PACKAGES
+############################################################
+
+Allow generation of diagnostic bundles containing:
+
+Configuration
+
+Logs
+
+Performance Metrics
+
+Installed Plugins
+
+Provider Status
+
+Crash Reports
+
+Health Checks
+
+Exclude secrets by default.
+
+====================================================================================================
+
+############################################################
+## ACCEPTANCE CRITERIA
+############################################################
+
+A developer tooling implementation is complete only if it:
+
+✓ Supports real-time inspection.
+
+✓ Supports structured logging.
+
+✓ Traces AI decisions.
+
+✓ Profiles performance.
+
+✓ Inspects plugins.
+
+✓ Inspects memory.
+
+✓ Generates diagnostics.
+
+✓ Preserves security boundaries.
+
+====================================================================================================
+
+############################################################
+## COMMON FAILURE MODES
+############################################################
+
+Avoid:
+
+Logging secrets.
+
+Developer Mode affecting production behavior.
+
+Excessive profiling overhead.
+
+Unbounded log growth.
+
+Missing correlation between events.
+
+Requiring application restart for routine diagnostics.
+
+====================================================================================================
+
+############################################################
+## CODE GENERATION CONSTRAINTS
+############################################################
+
+Generated implementations must:
+
+Separate diagnostics from production logic.
+
+Support configurable log levels.
+
+Expose structured APIs.
+
+Remain modular.
+
+Minimize runtime overhead when disabled.
+
+Allow future inspection tools to be added as plugins.
+
+====================================================================================================
+
+############################################################
+## ABSOLUTE RULE
+############################################################
+
+Every important decision made by VERVE should be explainable to developers through observable diagnostics.
+
+A production issue should be traceable without guesswork.
+
+====================================================================================================
+
+END OF CHAPTER 17

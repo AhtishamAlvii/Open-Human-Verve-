@@ -1,0 +1,496 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 4/40
+# MEMORY ENGINE & PERSONAL KNOWLEDGE SYSTEM
+# VERSION 1.0
+# =====================================================================================================
+
+###############################################
+## CONTEXT
+###############################################
+
+This chapter extends Chapters 1–3.
+
+VERVE must treat memory as a first-class system.
+
+Memory is not chat history.
+
+Memory is structured knowledge.
+
+Every piece of remembered information must have:
+
+• type
+• priority
+• source
+• confidence
+• timestamp
+• retention policy
+• privacy classification
+
+=======================================================================================================
+
+###############################################
+## PRIMARY OBJECTIVE
+###############################################
+
+VERVE must remember what matters, forget what doesn't, and retrieve the right information at the right time.
+
+The memory system must improve the user experience without becoming intrusive.
+
+=======================================================================================================
+
+###############################################
+## MEMORY CATEGORIES
+###############################################
+
+1. Working Memory
+
+Purpose:
+
+Maintain information required for the current conversation.
+
+Examples:
+
+Current task
+
+Current document
+
+Recent questions
+
+Temporary calculations
+
+Automatically discarded when no longer useful.
+
+------------------------------------------------
+
+2. Session Memory
+
+Purpose:
+
+Maintain context during one application session.
+
+Examples:
+
+Files opened
+
+Current coding task
+
+Temporary project decisions
+
+Voice settings for the session
+
+Discarded when the session ends unless promoted.
+
+------------------------------------------------
+
+3. Long-Term Memory
+
+Purpose:
+
+Store information that improves future interactions.
+
+Examples:
+
+Preferred greeting
+
+Favorite coding style
+
+Frequently used applications
+
+Recurring workflows
+
+Communication preferences
+
+Long-term goals
+
+Never delete automatically unless policy requires it.
+
+------------------------------------------------
+
+4. Project Memory
+
+Purpose:
+
+Track engineering work.
+
+Examples:
+
+Architecture decisions
+
+Completed modules
+
+Pending features
+
+Known issues
+
+Technical debt
+
+Project roadmap
+
+Each project has its own isolated memory.
+
+------------------------------------------------
+
+5. Knowledge Base
+
+Purpose:
+
+Store reusable knowledge.
+
+Examples:
+
+Technical references
+
+User-created notes
+
+Documentation
+
+Research summaries
+
+Manuals
+
+=======================================================================================================
+
+###############################################
+## MEMORY OBJECT MODEL
+###############################################
+
+Every memory record contains:
+
+Unique ID
+
+Category
+
+Title
+
+Description
+
+Created Timestamp
+
+Last Access Timestamp
+
+Source
+
+Confidence Score
+
+Importance Score
+
+Tags
+
+Related Memories
+
+Retention Policy
+
+Privacy Level
+
+Search Embedding
+
+Status
+
+=======================================================================================================
+
+###############################################
+## IMPORTANCE LEVELS
+###############################################
+
+Critical
+
+Important
+
+Useful
+
+Temporary
+
+Disposable
+
+Higher importance memories should be retained and surfaced more aggressively.
+
+=======================================================================================================
+
+###############################################
+## PRIVACY LEVELS
+###############################################
+
+Public
+
+Private
+
+Sensitive
+
+Highly Sensitive
+
+Restricted
+
+Higher privacy levels require stricter access controls.
+
+=======================================================================================================
+
+###############################################
+## RETENTION POLICIES
+###############################################
+
+Temporary
+
+Expire after use.
+
+Session
+
+Expire when the session ends.
+
+Persistent
+
+Retain until explicitly forgotten.
+
+Archived
+
+Keep for historical reference.
+
+Legal Hold
+
+Never delete automatically.
+
+=======================================================================================================
+
+###############################################
+## MEMORY CREATION RULES
+###############################################
+
+VERVE must not store everything.
+
+Before saving, evaluate:
+
+Does this improve future interactions?
+
+Did the user explicitly ask to remember it?
+
+Is it a long-term preference?
+
+Is it a recurring habit?
+
+Is it project knowledge?
+
+Is it sensitive?
+
+If the answer is "no," do not permanently store it.
+
+=======================================================================================================
+
+###############################################
+## USER COMMANDS
+###############################################
+
+Support natural commands such as:
+
+"Remember this."
+
+"Forget that."
+
+"Don't save this conversation."
+
+"Always greet me with 'Hello Sir'."
+
+"Never call me by my first name."
+
+"Remember this project."
+
+"Forget everything about Project X."
+
+"No memory for the next five minutes."
+
+=======================================================================================================
+
+###############################################
+## MEMORY RETRIEVAL
+###############################################
+
+Before answering any request:
+
+Search Working Memory.
+
+Search Session Memory.
+
+Search Project Memory.
+
+Search Long-Term Memory.
+
+Search Knowledge Base.
+
+Merge the results.
+
+Resolve conflicts.
+
+Use the most relevant information.
+
+=======================================================================================================
+
+###############################################
+## MEMORY CONSOLIDATION
+###############################################
+
+Periodically evaluate stored memories.
+
+Merge duplicates.
+
+Increase confidence for repeated facts.
+
+Reduce confidence for conflicting facts.
+
+Archive stale memories.
+
+Remove expired temporary memories.
+
+Never silently delete persistent memories.
+
+=======================================================================================================
+
+###############################################
+## KNOWLEDGE GRAPH
+###############################################
+
+VERVE should maintain relationships between memories.
+
+Example:
+
+User
+ ├── Project: VERVE
+ │     ├── Architecture
+ │     ├── UI
+ │     ├── Voice
+ │     └── Plugins
+ ├── Greeting Preference
+ ├── Coding Style
+ └── Preferred Voice
+
+Related memories should strengthen retrieval quality.
+
+=======================================================================================================
+
+###############################################
+## SEARCH STRATEGY
+###############################################
+
+Search using:
+
+Semantic similarity
+
+Keyword matching
+
+Tags
+
+Recency
+
+Importance
+
+Project relevance
+
+Confidence score
+
+Return the smallest set of highly relevant memories.
+
+=======================================================================================================
+
+###############################################
+## PERSONALIZATION
+###############################################
+
+Examples of long-term personalization:
+
+Preferred greeting
+
+Preferred tone
+
+Preferred IDE
+
+Coding conventions
+
+Favorite programming languages
+
+Frequently used websites
+
+Daily routines
+
+Working hours
+
+Accessibility preferences
+
+Do not infer sensitive personal information without explicit user instruction.
+
+=======================================================================================================
+
+###############################################
+## PROJECT MEMORY
+###############################################
+
+Every project should maintain:
+
+Goals
+
+Architecture
+
+Completed tasks
+
+Open tasks
+
+Bugs
+
+Milestones
+
+Future ideas
+
+Technical decisions
+
+Dependencies
+
+This allows VERVE to resume work even after weeks or months.
+
+=======================================================================================================
+
+###############################################
+## MEMORY SAFETY
+###############################################
+
+Never expose private memories unless required for the current task.
+
+Respect privacy classifications.
+
+Encrypt stored memories.
+
+Support secure backup and restore.
+
+Provide an audit trail for memory changes.
+
+=======================================================================================================
+
+###############################################
+## RESPONSE RULES
+###############################################
+
+For each interaction:
+
+1. Determine whether memory retrieval is needed.
+
+2. Retrieve only relevant memories.
+
+3. Use them naturally.
+
+4. Decide whether new memory should be created.
+
+5. Apply retention policy.
+
+6. Confirm only when appropriate.
+
+=======================================================================================================
+
+###############################################
+## ABSOLUTE RULE
+###############################################
+
+VERVE must remember with intention.
+
+It should never become forgetful, overwhelming, or invasive.
+
+The goal is trusted long-term assistance—not indiscriminate data collection.
+
+=======================================================================================================
+
+END OF CHAPTER 4

@@ -1,0 +1,358 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 6/40
+# REAL-TIME VOICE ENGINE, WAKE WORD & AUDIO INTELLIGENCE
+# VERSION 1.0
+# =====================================================================================================
+
+############################################################
+## CONTEXT
+############################################################
+
+This chapter extends Chapters 1–5.
+
+Voice is the primary interaction method with VERVE.
+
+The voice experience must feel immediate, natural, reliable, and interruption-friendly.
+
+The objective is to minimize the gap between the user finishing a sentence and VERVE beginning its response.
+
+VERVE must support both voice and typed interaction without maintaining separate conversation logic.
+
+====================================================================================================
+
+############################################################
+## PRIMARY OBJECTIVE
+############################################################
+
+Design a real-time conversational pipeline that supports:
+
+• Natural conversations
+• Streaming speech recognition
+• Streaming speech synthesis
+• Wake word activation
+• Voice interruption (barge-in)
+• Noise suppression
+• Echo cancellation
+• Continuous listening (optional)
+• Push-to-talk mode
+• Offline fallback where available
+• Provider abstraction
+
+====================================================================================================
+
+############################################################
+## DESIGN PRINCIPLES
+############################################################
+
+The system shall prioritize:
+
+1. Responsiveness
+2. Accuracy
+3. Reliability
+4. User Control
+5. Privacy
+6. Extensibility
+
+Voice should never block the UI or background task execution.
+
+====================================================================================================
+
+############################################################
+## AUDIO PIPELINE
+############################################################
+
+Microphone Input
+        │
+        ▼
+Voice Activity Detection (VAD)
+        │
+        ▼
+Noise Reduction
+        │
+        ▼
+Echo Cancellation
+        │
+        ▼
+Wake Word Detection (optional)
+        │
+        ▼
+Streaming Speech-to-Text
+        │
+        ▼
+Intent Processing (Orchestrator)
+        │
+        ▼
+Response Generation
+        │
+        ▼
+Streaming Text-to-Speech
+        │
+        ▼
+Speaker Output
+
+Each stage must be modular and independently replaceable.
+
+====================================================================================================
+
+############################################################
+## MICROPHONE MODES
+############################################################
+
+Support:
+
+• Always Listening
+• Wake Word
+• Push-to-Talk
+• Manual Toggle
+• Keyboard Shortcut Activation
+
+Switching modes must not require restarting the application.
+
+====================================================================================================
+
+############################################################
+## WAKE WORD
+############################################################
+
+Wake word support must be configurable.
+
+Examples:
+
+"VERVE"
+
+"Hello VERVE"
+
+"Assistant"
+
+User-defined wake phrase
+
+Requirements:
+
+• Low false positives
+• Fast activation
+• Local processing when possible
+• Optional cloud enhancement
+
+Wake word detection should consume minimal CPU while idle.
+
+====================================================================================================
+
+############################################################
+## VOICE ACTIVITY DETECTION
+############################################################
+
+Detect:
+
+• Speech start
+• Speech end
+• Silence
+• Background noise
+
+The system should automatically determine when the user has finished speaking instead of relying on fixed timers whenever possible.
+
+====================================================================================================
+
+############################################################
+## BARGE-IN SUPPORT
+############################################################
+
+If VERVE is speaking and the user starts talking:
+
+Immediately stop speech output.
+
+Capture the user's speech.
+
+Process the interruption.
+
+Respond to the new request.
+
+Never force the user to wait for speech playback to finish.
+
+====================================================================================================
+
+############################################################
+## STREAMING SPEECH RECOGNITION
+############################################################
+
+Speech recognition should stream partial results.
+
+Benefits:
+
+• Reduced perceived latency
+• Faster intent detection
+• Earlier task execution
+
+The Orchestrator may begin planning before the final transcript is complete when confidence is sufficient.
+
+====================================================================================================
+
+############################################################
+## STREAMING TEXT-TO-SPEECH
+############################################################
+
+VERVE should begin speaking as soon as meaningful output is available.
+
+Avoid waiting for the complete response before playback.
+
+Speech should sound fluid rather than sentence-by-sentence.
+
+====================================================================================================
+
+############################################################
+## VOICE PROVIDER ABSTRACTION
+############################################################
+
+The speech layer must not depend on a single provider.
+
+Implement a provider interface supporting:
+
+• Local engines
+• Microsoft Speech
+• Azure Speech
+• ElevenLabs
+• OpenAI Realtime
+• Future providers
+
+Changing providers should require configuration only, not architectural changes.
+
+====================================================================================================
+
+############################################################
+## LATENCY TARGETS
+############################################################
+
+Target performance goals:
+
+Wake word detection:
+< 150 ms
+
+Speech start detection:
+< 100 ms
+
+First transcription:
+< 300 ms
+
+Intent routing:
+< 100 ms
+
+First spoken response:
+< 600 ms after sufficient understanding
+
+These are design targets and may vary depending on hardware and provider.
+
+====================================================================================================
+
+############################################################
+## AUDIO QUALITY
+############################################################
+
+Support:
+
+• Noise suppression
+• Echo cancellation
+• Automatic gain control
+• Sample rate adaptation
+• Multi-device switching
+
+Allow users to select preferred input and output devices.
+
+====================================================================================================
+
+############################################################
+## ERROR RECOVERY
+############################################################
+
+If speech recognition fails:
+
+Retry intelligently.
+
+Prompt for clarification when necessary.
+
+Allow the user to switch to typing without losing conversation context.
+
+If the microphone disconnects:
+
+Notify the user.
+
+Pause voice interaction.
+
+Automatically recover if the device reconnects.
+
+====================================================================================================
+
+############################################################
+## USER EXPERIENCE
+############################################################
+
+Voice interactions should feel conversational.
+
+Examples:
+
+User:
+"VERVE, remind me tomorrow at 9."
+
+VERVE:
+"Done. I'll remind you tomorrow at 9 AM."
+
+While a background task runs:
+
+"I'm generating that report now. You can keep talking while I work."
+
+====================================================================================================
+
+############################################################
+## SECURITY & PRIVACY
+############################################################
+
+Provide controls for:
+
+• Always-listening mode
+• Wake word enable/disable
+• Voice recording retention
+• Local vs cloud processing
+• Microphone permissions
+
+Clearly indicate when the microphone is actively listening.
+
+====================================================================================================
+
+############################################################
+## TESTING REQUIREMENTS
+############################################################
+
+Validate:
+
+✓ Wake word accuracy
+
+✓ Barge-in responsiveness
+
+✓ Streaming transcription
+
+✓ Streaming speech playback
+
+✓ Microphone switching
+
+✓ High-noise environments
+
+✓ Network interruptions
+
+✓ Provider failover
+
+✓ Long conversations
+
+====================================================================================================
+
+############################################################
+## ABSOLUTE RULE
+############################################################
+
+The user should never feel that they are "waiting on the AI."
+
+Voice interaction must feel continuous, responsive, and natural.
+
+VERVE should behave like an attentive conversational partner, while remaining transparent about its capabilities and state.
+
+====================================================================================================
+
+END OF CHAPTER 6

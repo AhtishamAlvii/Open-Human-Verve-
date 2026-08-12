@@ -1,0 +1,483 @@
+# ====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 2/40
+# TECHNOLOGY STACK, REPOSITORY STRUCTURE & ENGINEERING STANDARDS
+# VERSION 1.0
+# ====================================================================================================
+
+############################################
+## CONTEXT
+############################################
+
+This chapter extends Chapter 1.
+
+Never contradict previous chapters.
+
+Treat every chapter as one continuous engineering specification.
+
+VERVE is a production-grade Windows AI desktop assistant designed to become one of the most advanced personal AI systems possible using current technology.
+
+This chapter permanently defines the project's technology stack, repository structure, engineering standards, naming conventions, and development workflow.
+
+These standards must be followed throughout the lifetime of the VERVE project.
+
+====================================================================================================
+
+############################################
+## PRIMARY OBJECTIVE
+############################################
+
+Design an engineering foundation that remains scalable, maintainable, secure, modular, and extensible for many years.
+
+The project should support:
+
+• Continuous development
+• Multi-developer collaboration
+• Independent modules
+• AI-generated code
+• Human-written code
+• Automated testing
+• CI/CD pipelines
+• Future technology upgrades
+
+====================================================================================================
+
+############################################
+## TECHNOLOGY DECISIONS
+############################################
+
+The preferred architecture is:
+
+Frontend:
+- React + TypeScript
+- Vite
+- TailwindCSS
+- Framer Motion
+- Electron
+
+Backend:
+- Python
+- FastAPI
+- AsyncIO
+- WebSockets
+
+AI Layer:
+- Modular AI Provider Abstraction
+- OpenAI
+- Anthropic
+- Gemini
+- Ollama
+- LM Studio
+- Future providers
+
+Database:
+
+Primary:
+SQLite during development
+
+Production:
+PostgreSQL
+
+Vector Database:
+
+ChromaDB
+
+Embedding Layer:
+
+Pluggable
+
+Speech:
+
+Whisper
+
+Microsoft Speech
+
+Azure Speech
+
+ElevenLabs
+
+OpenAI Realtime
+
+Text To Speech:
+
+Provider independent
+
+Authentication:
+
+Windows Credentials
+
+Encrypted Local Vault
+
+Credential Manager
+
+Secrets Manager
+
+Logging:
+
+Structured JSON Logging
+
+OpenTelemetry
+
+Monitoring:
+
+Prometheus compatible
+
+Plugin System:
+
+Python Plugins
+
+JavaScript Extensions
+
+Future SDK
+
+====================================================================================================
+
+############################################
+## PROJECT STRUCTURE
+############################################
+
+The repository must follow a predictable structure.
+
+Example:
+
+VERVE/
+
+docs/
+
+architecture/
+
+design/
+
+requirements/
+
+api/
+
+frontend/
+
+src/
+
+components/
+
+layouts/
+
+pages/
+
+hooks/
+
+stores/
+
+animations/
+
+widgets/
+
+voice/
+
+microphone/
+
+dashboard/
+
+backend/
+
+api/
+
+services/
+
+agents/
+
+memory/
+
+speech/
+
+automation/
+
+security/
+
+plugins/
+
+scheduler/
+
+database/
+
+logging/
+
+models/
+
+shared/
+
+common/
+
+config/
+
+scripts/
+
+installer/
+
+tests/
+
+unit/
+
+integration/
+
+performance/
+
+security/
+
+resources/
+
+assets/
+
+icons/
+
+animations/
+
+themes/
+
+voices/
+
+docs/
+
+deployment/
+
+====================================================================================================
+
+############################################
+## NAMING CONVENTIONS
+############################################
+
+Classes:
+
+PascalCase
+
+Interfaces:
+
+Prefix I
+
+Example:
+
+IMemoryService
+
+Variables:
+
+camelCase
+
+Constants:
+
+UPPER_SNAKE_CASE
+
+Files:
+
+kebab-case
+
+Folders:
+
+lowercase
+
+Events:
+
+Past tense
+
+Examples:
+
+TaskCompleted
+
+VoiceDetected
+
+MemoryUpdated
+
+====================================================================================================
+
+############################################
+## CODING STANDARDS
+############################################
+
+Every generated file must include:
+
+Purpose
+
+Dependencies
+
+Public API
+
+Error Handling
+
+Logging
+
+Performance Notes
+
+Security Notes
+
+Unit Testing Guidance
+
+Integration Notes
+
+Future Extension Notes
+
+====================================================================================================
+
+############################################
+## DEPENDENCY RULES
+############################################
+
+Never allow circular dependencies.
+
+Always depend on interfaces.
+
+Never tightly couple modules.
+
+Every subsystem should be independently replaceable.
+
+====================================================================================================
+
+############################################
+## CONFIGURATION RULES
+############################################
+
+Never hardcode:
+
+API Keys
+
+Passwords
+
+Secrets
+
+Database Credentials
+
+Tokens
+
+Endpoints
+
+Everything must be configurable.
+
+Environment specific settings must remain separated.
+
+====================================================================================================
+
+############################################
+## DOCUMENTATION RULES
+############################################
+
+Every module must include documentation.
+
+Every API must include examples.
+
+Every service must explain:
+
+Purpose
+
+Inputs
+
+Outputs
+
+Dependencies
+
+Failure Cases
+
+====================================================================================================
+
+############################################
+## ERROR HANDLING
+############################################
+
+Every subsystem must:
+
+Recover gracefully.
+
+Retry intelligently.
+
+Log failures.
+
+Notify the orchestrator.
+
+Never crash the entire application due to one subsystem failure.
+
+====================================================================================================
+
+############################################
+## PERFORMANCE STANDARDS
+############################################
+
+Prioritize:
+
+Low latency
+
+Low CPU usage
+
+Low memory consumption
+
+Minimal blocking
+
+Asynchronous operations
+
+Efficient caching
+
+Background processing
+
+====================================================================================================
+
+############################################
+## SECURITY STANDARDS
+############################################
+
+Every feature must consider:
+
+Encryption
+
+Authentication
+
+Authorization
+
+Audit Logging
+
+Secure Storage
+
+Least Privilege
+
+Threat Detection
+
+Data Privacy
+
+====================================================================================================
+
+############################################
+## SELF VALIDATION
+############################################
+
+Before generating any implementation verify:
+
+✓ Compatible with previous chapters
+
+✓ Follows repository standards
+
+✓ Follows naming standards
+
+✓ Modular
+
+✓ Secure
+
+✓ Scalable
+
+✓ Documented
+
+✓ Testable
+
+✓ Production Ready
+
+====================================================================================================
+
+############################################
+## ABSOLUTE RULE
+############################################
+
+If a future request violates these engineering standards:
+
+Stop.
+
+Explain why.
+
+Propose a compliant solution.
+
+Never knowingly compromise the architecture.
+
+====================================================================================================
+
+END OF CHAPTER 2

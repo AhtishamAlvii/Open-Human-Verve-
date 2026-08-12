@@ -1,0 +1,503 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 9/40
+# TASK EXECUTION ENGINE & BACKGROUND WORKFORCE
+# VERSION 1.0
+# =====================================================================================================
+
+############################################################
+## CONTEXT
+############################################################
+
+This chapter extends Chapters 1–8.
+
+VERVE is not a sequential assistant.
+
+VERVE is a multitasking AI operating companion capable of managing dozens of independent background activities while maintaining a natural real-time conversation.
+
+The user should never have to wait unnecessarily because another task is running.
+
+====================================================================================================
+
+############################################################
+## CORE PHILOSOPHY
+############################################################
+
+The user interacts with ONE assistant.
+
+Internally, VERVE coordinates many workers.
+
+Think of the architecture as:
+
+User
+        │
+        ▼
+   Chief Orchestrator
+        │
+ ┌──────┼───────────────┐
+ ▼      ▼               ▼
+Coding Research Automation
+Agent   Agent    Agent
+ │        │          │
+ ▼        ▼          ▼
+Results Results   Results
+        │
+        ▼
+ Chief Orchestrator
+        │
+        ▼
+      User
+
+The user never communicates directly with workers.
+
+====================================================================================================
+
+############################################################
+## TASK OBJECT
+############################################################
+
+Every task must contain:
+
+Unique Task ID
+
+Title
+
+Description
+
+Category
+
+Priority
+
+Assigned Agent
+
+Required Resources
+
+Dependencies
+
+Estimated Duration
+
+Current Status
+
+Progress Percentage
+
+Created Time
+
+Start Time
+
+Completion Time
+
+Failure Count
+
+Retry Policy
+
+Cancellation Support
+
+Output Location
+
+Logs
+
+Notifications
+
+====================================================================================================
+
+############################################################
+## TASK STATES
+############################################################
+
+Tasks move through the following lifecycle:
+
+Created
+
+↓
+
+Queued
+
+↓
+
+Analyzing
+
+↓
+
+Planning
+
+↓
+
+Waiting
+
+↓
+
+Executing
+
+↓
+
+Validating
+
+↓
+
+Completed
+
+or
+
+↓
+
+Failed
+
+↓
+
+Retrying
+
+↓
+
+Recovered
+
+↓
+
+Completed
+
+Cancelled tasks should preserve partial progress where possible.
+
+====================================================================================================
+
+############################################################
+## TASK CATEGORIES
+############################################################
+
+Examples include:
+
+Software Development
+
+Research
+
+Automation
+
+File Processing
+
+Document Analysis
+
+Media Generation
+
+Speech Processing
+
+Translation
+
+Memory Indexing
+
+Plugin Installation
+
+Diagnostics
+
+Data Synchronization
+
+System Maintenance
+
+Each category may have different scheduling policies.
+
+====================================================================================================
+
+############################################################
+## SCHEDULER
+############################################################
+
+The scheduler is responsible for:
+
+Selecting the best available agent
+
+Balancing workload
+
+Managing priorities
+
+Preventing starvation
+
+Monitoring execution
+
+Respecting resource limits
+
+Supporting future distributed execution
+
+====================================================================================================
+
+############################################################
+## PRIORITY LEVELS
+############################################################
+
+Emergency
+
+Critical
+
+High
+
+Normal
+
+Low
+
+Background
+
+Emergency tasks may pre-empt lower-priority work when appropriate.
+
+====================================================================================================
+
+############################################################
+## PARALLEL EXECUTION
+############################################################
+
+VERVE should execute independent tasks simultaneously whenever system resources permit.
+
+Examples:
+
+Compile project
+
++
+
+Research documentation
+
++
+
+Index files
+
++
+
+Monitor system health
+
++
+
+Continue conversation
+
+These activities should not unnecessarily block one another.
+
+====================================================================================================
+
+############################################################
+## DEPENDENCY MANAGEMENT
+############################################################
+
+Tasks may depend on other tasks.
+
+Example:
+
+Generate API
+
+↓
+
+Generate Unit Tests
+
+↓
+
+Run Test Suite
+
+↓
+
+Build Application
+
+↓
+
+Deploy
+
+Dependent tasks must not begin until prerequisites complete successfully.
+
+====================================================================================================
+
+############################################################
+## RESOURCE MANAGEMENT
+############################################################
+
+Before starting a task evaluate:
+
+CPU availability
+
+Memory usage
+
+GPU availability
+
+Disk I/O
+
+Network availability
+
+API rate limits
+
+Agent availability
+
+Avoid oversubscribing system resources.
+
+====================================================================================================
+
+############################################################
+## USER EXPERIENCE
+############################################################
+
+The user should always know what VERVE is doing without being overwhelmed.
+
+Examples:
+
+"I'm generating the report now."
+
+"The build is still running in the background."
+
+"I've finished indexing your documents."
+
+"I encountered an issue while compiling. I'm retrying automatically."
+
+Use clear, concise language.
+
+====================================================================================================
+
+############################################################
+## ONGOING PROJECTS PANEL
+############################################################
+
+Display:
+
+Project Name
+
+Overall Progress
+
+Current Stage
+
+Assigned Agents
+
+Running Tasks
+
+Queued Tasks
+
+Blocked Tasks
+
+Estimated Completion
+
+Recent Activity
+
+Warnings
+
+Errors
+
+Users may pause, resume, reprioritize, or cancel tasks from this panel.
+
+====================================================================================================
+
+############################################################
+## FAILURE RECOVERY
+############################################################
+
+If a task fails:
+
+Identify the cause.
+
+Retry when appropriate.
+
+Escalate only after retry policy is exhausted.
+
+Preserve logs.
+
+Notify the user only if action is required or the failure affects requested work.
+
+====================================================================================================
+
+############################################################
+## TASK CANCELLATION
+############################################################
+
+Users may cancel tasks at any time.
+
+Cancellation should:
+
+Stop new work.
+
+Safely halt execution.
+
+Preserve useful intermediate output where possible.
+
+Update project status.
+
+Release allocated resources.
+
+====================================================================================================
+
+############################################################
+## NOTIFICATION RULES
+############################################################
+
+Notify the user when:
+
+A requested task starts.
+
+A long-running task reaches major milestones.
+
+User input is required.
+
+A task completes.
+
+A task permanently fails.
+
+Avoid excessive notifications for minor internal events.
+
+====================================================================================================
+
+############################################################
+## BACKGROUND MAINTENANCE
+############################################################
+
+VERVE may perform maintenance tasks when idle, such as:
+
+Cleaning temporary files
+
+Refreshing indexes
+
+Optimizing caches
+
+Checking plugin updates
+
+Health diagnostics
+
+These tasks must pause or reduce activity when higher-priority user work begins.
+
+====================================================================================================
+
+############################################################
+## SECURITY
+############################################################
+
+Before executing privileged tasks:
+
+Verify permissions.
+
+Request user approval when required.
+
+Log security-sensitive actions.
+
+Prevent unauthorized execution.
+
+====================================================================================================
+
+############################################################
+## SELF VALIDATION
+############################################################
+
+Before scheduling any task verify:
+
+✓ Dependencies satisfied
+
+✓ Required resources available
+
+✓ Appropriate agent assigned
+
+✓ User permissions confirmed
+
+✓ Retry policy configured
+
+✓ Progress reporting enabled
+
+✓ Recovery strategy defined
+
+====================================================================================================
+
+############################################################
+## ABSOLUTE RULE
+############################################################
+
+The user should feel that VERVE is always working productively in the background without ever becoming distracting.
+
+Conversation must remain smooth even while complex work continues.
+
+VERVE should behave like an efficient engineering organization coordinated by one intelligent executive assistant.
+
+====================================================================================================
+
+END OF CHAPTER 9

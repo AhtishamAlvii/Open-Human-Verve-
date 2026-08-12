@@ -1,0 +1,526 @@
+# =====================================================================================================
+# VERVE AI ENGINEERING BIBLE
+# CHAPTER 26/40
+# AUTONOMOUS CODING, SOFTWARE ENGINEERING & SELF-DEVELOPMENT AGENTS
+# VERSION 1.0
+# =====================================================================================================
+
+############################################################
+## CONTEXT
+############################################################
+
+This chapter extends Chapters 1–25.
+
+VERVE should function as an intelligent software engineering organization.
+
+Software development responsibilities are distributed among specialized agents coordinated through structured planning and review.
+
+The objective is safe, transparent, and high-quality software evolution.
+
+====================================================================================================
+
+############################################################
+## PRIMARY OBJECTIVE
+############################################################
+
+Create a collaborative engineering platform capable of:
+
+• Understanding large codebases.
+
+• Planning implementations.
+
+• Writing code.
+
+• Refactoring safely.
+
+• Reviewing changes.
+
+• Executing tests.
+
+• Maintaining documentation.
+
+• Monitoring builds.
+
+• Improving code quality.
+
+====================================================================================================
+
+############################################################
+## ENGINEERING ORGANIZATION
+############################################################
+
+Engineering work is coordinated by a Lead Engineering Agent.
+
+Supporting agents include:
+
+Architecture Agent
+
+Planning Agent
+
+Frontend Agent
+
+Backend Agent
+
+Database Agent
+
+Infrastructure Agent
+
+DevOps Agent
+
+Testing Agent
+
+Quality Assurance Agent
+
+Security Agent
+
+Performance Agent
+
+Documentation Agent
+
+Code Review Agent
+
+Research Agent
+
+Dependency Management Agent
+
+Release Agent
+
+Migration Agent
+
+Future engineering roles should be dynamically registerable.
+
+====================================================================================================
+
+############################################################
+## ENGINEERING WORKFLOW
+############################################################
+
+User Request
+
+↓
+
+Requirement Analysis
+
+↓
+
+Architecture Planning
+
+↓
+
+Task Decomposition
+
+↓
+
+Agent Assignment
+
+↓
+
+Implementation
+
+↓
+
+Testing
+
+↓
+
+Review
+
+↓
+
+Documentation
+
+↓
+
+Validation
+
+↓
+
+Deployment Preparation
+
+↓
+
+Completion Report
+
+Each phase produces structured artifacts.
+
+====================================================================================================
+
+############################################################
+## CODEBASE UNDERSTANDING
+############################################################
+
+VERVE should understand:
+
+Project structure
+
+Dependencies
+
+Architecture
+
+Modules
+
+Design patterns
+
+Naming conventions
+
+Configuration
+
+Tests
+
+Documentation
+
+Build system
+
+Version history
+
+Knowledge is integrated into the Cognitive Knowledge Network.
+
+====================================================================================================
+
+############################################################
+## REQUIREMENT ANALYSIS
+############################################################
+
+Before implementation:
+
+Clarify objectives.
+
+Identify affected modules.
+
+Estimate complexity.
+
+Identify risks.
+
+Determine dependencies.
+
+Generate implementation plans.
+
+Avoid immediate code generation without understanding scope.
+
+====================================================================================================
+
+############################################################
+## IMPLEMENTATION STRATEGY
+############################################################
+
+Support:
+
+Single-file changes
+
+Multi-file features
+
+Large refactors
+
+Bug fixes
+
+Performance optimization
+
+Security improvements
+
+API development
+
+Database migrations
+
+Infrastructure changes
+
+Documentation updates
+
+====================================================================================================
+
+############################################################
+## CODE GENERATION
+############################################################
+
+Generated code should:
+
+Follow project conventions.
+
+Be modular.
+
+Be maintainable.
+
+Include appropriate error handling.
+
+Minimize technical debt.
+
+Avoid unnecessary complexity.
+
+Prefer readability over cleverness.
+
+====================================================================================================
+
+############################################################
+## REFACTORING
+############################################################
+
+Support safe refactoring.
+
+Examples:
+
+Rename symbols
+
+Extract methods
+
+Split modules
+
+Remove duplication
+
+Improve architecture
+
+Simplify logic
+
+Refactoring should preserve behavior.
+
+====================================================================================================
+
+############################################################
+## AUTOMATED TESTING
+############################################################
+
+Engineering agents generate:
+
+Unit Tests
+
+Integration Tests
+
+Regression Tests
+
+Performance Tests
+
+Security Tests
+
+Mock Data
+
+Test Fixtures
+
+Testing is mandatory before implementation is considered complete.
+
+====================================================================================================
+
+############################################################
+## CODE REVIEW
+############################################################
+
+Every implementation passes through automated review.
+
+Review criteria include:
+
+Correctness
+
+Readability
+
+Maintainability
+
+Security
+
+Performance
+
+Architecture
+
+Style consistency
+
+Documentation completeness
+
+Reviews produce actionable recommendations.
+
+====================================================================================================
+
+############################################################
+## DOCUMENTATION
+############################################################
+
+Automatically generate:
+
+Architecture summaries
+
+API documentation
+
+Change logs
+
+Migration notes
+
+Developer guides
+
+Inline comments where appropriate
+
+Documentation remains synchronized with implementation.
+
+====================================================================================================
+
+############################################################
+## VERSION CONTROL
+############################################################
+
+Support:
+
+Branch creation
+
+Commit planning
+
+Commit message generation
+
+Merge preparation
+
+Conflict analysis
+
+Rollback assistance
+
+Release tagging
+
+Integrate with standard Git workflows.
+
+====================================================================================================
+
+############################################################
+## CI/CD INTEGRATION
+############################################################
+
+Coordinate with build systems.
+
+Examples:
+
+Compilation
+
+Static analysis
+
+Testing
+
+Package generation
+
+Deployment validation
+
+Release preparation
+
+Failures should produce diagnostic reports.
+
+====================================================================================================
+
+############################################################
+## SELF-DEVELOPMENT
+############################################################
+
+VERVE may propose improvements to its own codebase.
+
+Examples:
+
+Performance optimizations
+
+Bug fixes
+
+Architecture improvements
+
+Documentation updates
+
+Security enhancements
+
+Any modification to VERVE itself requires explicit user approval before execution.
+
+====================================================================================================
+
+############################################################
+## ENGINEERING DASHBOARD
+############################################################
+
+Provide real-time visibility.
+
+Display:
+
+Assigned Agents
+
+Task Progress
+
+Files Modified
+
+Tests Running
+
+Build Status
+
+Warnings
+
+Estimated Completion
+
+Resource Usage
+
+Pending Reviews
+
+====================================================================================================
+
+############################################################
+## ACCEPTANCE CRITERIA
+############################################################
+
+An engineering implementation is complete only if it:
+
+✓ Understands the codebase.
+
+✓ Produces implementation plans.
+
+✓ Coordinates specialized agents.
+
+✓ Generates maintainable code.
+
+✓ Executes testing.
+
+✓ Performs code review.
+
+✓ Updates documentation.
+
+✓ Reports progress transparently.
+
+====================================================================================================
+
+############################################################
+## COMMON FAILURE MODES
+############################################################
+
+Avoid:
+
+Blind code generation.
+
+Ignoring architecture.
+
+Skipping testing.
+
+Bypassing review.
+
+Breaking project conventions.
+
+Modifying production code without validation.
+
+Silent self-modification.
+
+====================================================================================================
+
+############################################################
+## CODE GENERATION CONSTRAINTS
+############################################################
+
+Generated implementations must:
+
+Separate planning from coding.
+
+Support incremental development.
+
+Preserve architectural integrity.
+
+Generate structured engineering artifacts.
+
+Enable human review.
+
+Remain reproducible and testable.
+
+====================================================================================================
+
+############################################################
+## ABSOLUTE RULE
+############################################################
+
+VERVE should behave like a disciplined software engineering organization—not an autocomplete engine.
+
+Every implementation should be planned, reviewed, tested, documented, and validated before being considered complete.
+
+Transparency, correctness, and maintainability always take precedence over speed.
+
+====================================================================================================
+
+END OF CHAPTER 26
